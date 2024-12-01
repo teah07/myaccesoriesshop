@@ -63,7 +63,6 @@
     
         header nav ul li a:hover,
         header nav ul li.active a {
-            right:0;
             color: #00b4d8; 
             text-decoration: underline;
         }
@@ -196,9 +195,6 @@
         #home-button:hover {
             background-color: #0077b6; 
         }
-        #home-button.active {
-           right: 0;
-        }
     
         .cta-button {
             background-color: #f1c40f; 
@@ -232,80 +228,76 @@
            font-weight: bold;
         }
         .form-section {
-            background-color: #0a0327; 
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: auto;
-            margin-top: 50px;
-    }
-
-        .form-section h2 {
-            text-align: center;
-            color: #0077b6;
-            margin-bottom: 20px;
-   }
-
-        form {
-           display: flex;
-           flex-direction: column;
-    }
-
-        label {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 8px;
-   }
-
-        input[type="text"], input[type="email"], textarea {
-            padding: 10px;
-            font-size: 16px;
-            margin-bottom: 15px;
-            border: 1px solid #fff4f4;
-            border-radius: 5px;
-            outline: none;
-    }
-
-        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-           border-color: #0077b6;
+    background-color: #0a0327; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    margin-top: 50px;
 }
 
-        textarea {
-           resize: vertical;
+.form-section h2 {
+    text-align: center;
+    color: #0077b6;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #fff4f4;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #0077b6;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button.submit-btn {
+    background-color: #1b0b55;
+    color: rgb(11, 145, 145);
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.submit-btn:hover {
+    background-color: #0077b6;
+}
+
+@media (max-width: 600px) {
+    .form-section {
+        margin: 20px;
+        padding: 15px;
     }
 
-        button.submit-btn {
-           background-color: #1b0b55;
-           color: rgb(11, 145, 145);
-           font-size: 18px;
-           padding: 10px 20px;
-           border: none;
-           border-radius: 5px;
-           cursor: pointer;
-           transition: background-color 0.3s ease;
+    input[type="text"], input[type="email"], textarea {
+        font-size: 14px;
+        padding: 8px;
     }
 
-         button.submit-btn:hover {
-           background-color: #0077b6;
-    }
-
-        button.submit-btn:active {
-           right: 0;
-    }
-
-        @media (max-width: 600px) {
-        .form-section {
-           margin: 20px;
-           padding: 15px;
-    }
-
-        input[type="text"], input[type="email"], textarea {
-           font-size: 14px;
-           padding: 8px;
-    }
-
-        button.submit-btn {
+    button.submit-btn {
         font-size: 16px;
     }
 }
@@ -578,19 +570,11 @@
             const searchTerm = document.querySelector('.search-bar').value;
             if (searchTerm) {
                 alert("Searching for:" + searchTerm);
-                window.location.href = "shopp.html" + encodeURIComponent(searchTerm);
+                window.location.href = "file:///C:/csc574/lab%20tutor%202/shopp.html" + encodeURIComponent(searchTerm);
             } else {
                 alert("Please enter a search term!");
             }
         }
-        document.addEventListener("DOMContentLoaded", function() {
-
-        const navItems = document.querySelectorAll("nav ul li");
-
-        navItems.forEach(item => {
-            item.classList.add("active");
-        });
-    });
 
         function goHome(message) {
                 alert(message);
@@ -618,7 +602,7 @@
     document.getElementById('total-price').innerText = 'RM' + total.toFixed(2); 
 
 
-    function calculateTotal() {
+function calculateTotal() {
     updateTotal(); 
     const totalAmount = document.getElementById('total-price').innerText;
     alert("Total Amount: " + totalAmount);
